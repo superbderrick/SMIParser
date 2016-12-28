@@ -7,9 +7,22 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, const char * argv[]) {
-  // insert code here...
-  printf("Hello, World!\n");
+  
+  if (argc != 2) {
+    printf("Please input SMIPath correctly ! \n");
+    exit(1);
+  } else {
+    printf("--------------------------------------------- \n");
+    printf("Start Parsing AT >>>>>>>>>>>> %s <<<<<<<<<<  \n" , argv[1]);
+    printf("--------------------------------------------- \n");
+    
+    
+  }
+    
+  
+  
     return 0;
 }

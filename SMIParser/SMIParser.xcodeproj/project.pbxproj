@@ -57,9 +57,17 @@
 		4965078A1E11412B00A2E272 /* SMIParser */ = {
 			isa = PBXGroup;
 			children = (
+				496507921E13DFC800A2E272 /* TestCode */,
 				4965078B1E11412B00A2E272 /* main.c */,
 			);
 			path = SMIParser;
+			sourceTree = "<group>";
+		};
+		496507921E13DFC800A2E272 /* TestCode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TestCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
