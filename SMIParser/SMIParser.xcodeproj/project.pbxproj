@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4965078C1E11412B00A2E272 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4965078B1E11412B00A2E272 /* main.c */; };
+		496507981E1780F400A2E272 /* SMIParser.c in Sources */ = {isa = PBXBuildFile; fileRef = 496507961E1780F400A2E272 /* SMIParser.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		496507931E177A8100A2E272 /* ParserConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParserConfig.h; sourceTree = "<group>"; };
 		496507941E177C1800A2E272 /* ErrorType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorType.h; sourceTree = "<group>"; };
 		496507951E177CC000A2E272 /* SMITag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMITag.h; sourceTree = "<group>"; };
+		496507961E1780F400A2E272 /* SMIParser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SMIParser.c; sourceTree = "<group>"; };
+		496507971E1780F400A2E272 /* SMIParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMIParser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				496507921E13DFC800A2E272 /* TestCode */,
-				4965078B1E11412B00A2E272 /* main.c */,
 			);
 			path = SMIParser;
 			sourceTree = "<group>";
@@ -69,9 +71,12 @@
 		496507921E13DFC800A2E272 /* TestCode */ = {
 			isa = PBXGroup;
 			children = (
+				4965078B1E11412B00A2E272 /* main.c */,
 				496507931E177A8100A2E272 /* ParserConfig.h */,
 				496507941E177C1800A2E272 /* ErrorType.h */,
 				496507951E177CC000A2E272 /* SMITag.h */,
+				496507961E1780F400A2E272 /* SMIParser.c */,
+				496507971E1780F400A2E272 /* SMIParser.h */,
 			);
 			name = TestCode;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				496507981E1780F400A2E272 /* SMIParser.c in Sources */,
 				4965078C1E11412B00A2E272 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,42 +8,37 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "ParserConfig.h"
 #include "ErrorType.h"
+#include "SMIParser.h"
 
-int test = 0;
+int checkArgument(int num ,const char* fileName);
+
 int main(int argc, const char * argv[]) {
   
-  if (argc != ARGUMENT_NUM) {
+  if(checkArgument(argc, argv[1]) == 0)
+    readFile(argv[1]);
+  
+    return 0;
+}
+
+int checkArgument(int num , const char * fileName) {
+  int errorNone = 0;
+  
+  if (num != ARGUMENT_NUM) {
+    errorNone = 1;
     printf("Please input SMIPath correctly ! \n");
     exit(1);
   } else {
+    errorNone = 0;
     printf("--------------------------------------------- \n");
-    printf("Start Parsing AT >>>>>>>>>>>> %s <<<<<<<<<<  \n" , argv[1]);
+    printf("Start Parsing AT >>>>>>>>>>>> %s <<<<<<<<<<  \n" , fileName);
     printf("--------------------------------------------- \n");
     
-    FILE* fin;
-    char line[MAX_LENGTH]; /* 라인 문자열을 담들 버퍼 */
-    
-    fin = fopen(argv[1], "r" );
-    
-    
-    if( fin == NULL )
-    {
-      exit( EXIT_FAILURE );
-    }
-    
-    while( fgets( line, MAX_LENGTH, fin ) )
-    {
-      test++;
-      fputs( line, stdout );
-    }
-    
-      fclose( fin );
   }
   
-  printf("%d\n", test);
+  return errorNone;
   
-    return 0;
 }

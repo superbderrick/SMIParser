@@ -10,5 +10,10 @@
 #define SMIParser_h
 
 #include <stdio.h>
+#include <stdlib.h>
+#include "ParserConfig.h"
+
+
+void readFile(const char * path);
 
 #endif /* SMIParser_h */
