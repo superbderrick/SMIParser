@@ -9,11 +9,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_LENGTH 1048576
+#include "ParserConfig.h"
+#include "ErrorType.h"
+
 int test = 0;
 int main(int argc, const char * argv[]) {
   
-  if (argc != 2) {
+  if (argc != ARGUMENT_NUM) {
     printf("Please input SMIPath correctly ! \n");
     exit(1);
   } else {
@@ -23,7 +25,6 @@ int main(int argc, const char * argv[]) {
     
     FILE* fin;
     char line[MAX_LENGTH]; /* 라인 문자열을 담들 버퍼 */
-    
     
     fin = fopen(argv[1], "r" );
     
@@ -39,12 +40,7 @@ int main(int argc, const char * argv[]) {
       fputs( line, stdout );
     }
     
-    fclose( fin );
-    
-    
-    
-    
-    
+      fclose( fin );
   }
   
   printf("%d\n", test);

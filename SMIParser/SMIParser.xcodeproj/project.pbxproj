@@ -25,6 +25,9 @@
 /* Begin PBXFileReference section */
 		496507881E11412B00A2E272 /* SMIParser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SMIParser; sourceTree = BUILT_PRODUCTS_DIR; };
 		4965078B1E11412B00A2E272 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		496507931E177A8100A2E272 /* ParserConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParserConfig.h; sourceTree = "<group>"; };
+		496507941E177C1800A2E272 /* ErrorType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorType.h; sourceTree = "<group>"; };
+		496507951E177CC000A2E272 /* SMITag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMITag.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,9 @@
 		496507921E13DFC800A2E272 /* TestCode */ = {
 			isa = PBXGroup;
 			children = (
+				496507931E177A8100A2E272 /* ParserConfig.h */,
+				496507941E177C1800A2E272 /* ErrorType.h */,
+				496507951E177CC000A2E272 /* SMITag.h */,
 			);
 			name = TestCode;
 			sourceTree = "<group>";
