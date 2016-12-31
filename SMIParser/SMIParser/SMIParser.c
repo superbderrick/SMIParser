@@ -24,7 +24,6 @@ void readFile(const char * path) {
   while( fgets( line, MAX_LENGTH, file ) )
   {
     test++;
-   // fputs( line, stdout );
   }
   
   fclose( file );
