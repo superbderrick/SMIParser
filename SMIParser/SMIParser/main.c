@@ -10,7 +10,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "ParserConfig.h"
 #include "ErrorType.h"
 #include "SMIParser.h"
 
@@ -18,9 +17,21 @@ int checkArgument(int num ,const char* fileName);
 
 int main(int argc, const char * argv[]) {
   
-  if(checkArgument(argc, argv[1]) == 0)
-    readFile(argv[1]);
-  
+  if(checkArgument(argc, argv[1]) == 0) {
+    
+    char ** words = readFile(argv[1]);
+    
+    if(!words) {
+      fprintf(stderr, "Can'tbuild date strucure \n");
+    }
+    
+    for (int i = 0 ; words[i] != NULL ; i++) {
+      printf("%s\n" ,words[i]);
+    }
+    printf(" Done \n" );
+    
+    
+  }
     return 0;
 }
 
@@ -36,9 +47,6 @@ int checkArgument(int num , const char * fileName) {
     printf("--------------------------------------------- \n");
     printf("Start Parsing AT >>>>>>>>>>>> %s <<<<<<<<<<  \n" , fileName);
     printf("--------------------------------------------- \n");
-    
   }
-  
-  return errorNone;
-  
+    return errorNone;
 }

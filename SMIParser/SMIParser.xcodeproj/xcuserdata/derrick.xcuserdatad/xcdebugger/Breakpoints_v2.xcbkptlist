@@ -10,13 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SMIParser/SMIParser.c"
-            timestampString = "504867841.642458"
+            timestampString = "504944122.794181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "readFile()"
-            landmarkType = "9">
+            startingLineNumber = "31"
+            endingLineNumber = "31">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SMIParser/SMIParser.c"
-            timestampString = "504867841.642458"
+            timestampString = "504944122.794181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "readFile()"
-            landmarkType = "9">
+            startingLineNumber = "32"
+            endingLineNumber = "32">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
