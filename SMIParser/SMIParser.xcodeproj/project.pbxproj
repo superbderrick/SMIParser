@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4965078C1E11412B00A2E272 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4965078B1E11412B00A2E272 /* main.c */; };
 		496507981E1780F400A2E272 /* SMIParser.c in Sources */ = {isa = PBXBuildFile; fileRef = 496507961E1780F400A2E272 /* SMIParser.c */; };
+		4988049F1E18DB5800E997AD /* SMIProcessor.c in Sources */ = {isa = PBXBuildFile; fileRef = 4988049D1E18DB5800E997AD /* SMIProcessor.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		496507951E177CC000A2E272 /* SMITag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMITag.h; sourceTree = "<group>"; };
 		496507961E1780F400A2E272 /* SMIParser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SMIParser.c; sourceTree = "<group>"; };
 		496507971E1780F400A2E272 /* SMIParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMIParser.h; sourceTree = "<group>"; };
+		4988049D1E18DB5800E997AD /* SMIProcessor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SMIProcessor.c; sourceTree = "<group>"; };
+		4988049E1E18DB5800E997AD /* SMIProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMIProcessor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				496507951E177CC000A2E272 /* SMITag.h */,
 				496507961E1780F400A2E272 /* SMIParser.c */,
 				496507971E1780F400A2E272 /* SMIParser.h */,
+				4988049D1E18DB5800E997AD /* SMIProcessor.c */,
+				4988049E1E18DB5800E997AD /* SMIProcessor.h */,
 			);
 			name = TestCode;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			files = (
 				496507981E1780F400A2E272 /* SMIParser.c in Sources */,
 				4965078C1E11412B00A2E272 /* main.c in Sources */,
+				4988049F1E18DB5800E997AD /* SMIProcessor.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +275,7 @@
 				496507911E11412B00A2E272 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

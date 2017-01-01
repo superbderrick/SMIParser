@@ -28,9 +28,7 @@ int main(int argc, const char * argv[]) {
     for (int i = 0 ; words[i] != NULL ; i++) {
       printf("%s\n" ,words[i]);
     }
-    printf(" Done \n" );
-    
-    
+      printf(" Done \n" );
   }
     return 0;
 }
