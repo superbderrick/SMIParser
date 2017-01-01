@@ -1,6 +1,7 @@
 # SMIParser 
 
-(SMA,SMI) Caption Parser Native library.
+(SAMI,SMI) Caption Parser and CaptionRenderer Library.
 
-- Support android & iOS. 
+- Support Android & iOS. 
+
 
