@@ -11,6 +11,7 @@
 #include "ErrorType.h"
 #include "SMIParser.h"
 #include "SMIProcessor.h"
+
 int checkArgument(int num ,const char* fileName);
 void startParsing(const char * fileName);
 
@@ -20,13 +21,14 @@ int main(int argc, const char * argv[]) {
   if(checkArgument(argc, argv[1]) == ERROR_NONE) {
     startParsing(argv[1]);
     
-    char ** words = readFile(argv[1]);
+    //read whole file and receive caption's information array.
+    char ** captionLines = readFile(argv[1]);
     
-    if(!words) {
-      printf("Can't build Data Strucure \n");
+    if(!captionLines) {
+      printf("File read failuer it didin't make wordsList \n");
       exit(1);
     } else {
-      init(words);
+      init(captionLines);
     }
     
   } else {
@@ -44,7 +46,7 @@ int checkArgument(int num , const char * fileName) {
   
   if (num != ARGUMENT_NUM) {
     errorNone = ERROR_OCCUR;
-    printf("Please input SMIPath correctly ! \n");
+    printf("Invalid arguments error Please input Filepath correctly ! \n");
     exit(1);
   } else {
     errorNone = ERROR_NONE;

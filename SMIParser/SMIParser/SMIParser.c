@@ -12,7 +12,7 @@
 char** readFile(const char * filepath) {
   FILE *file = fopen(filepath, "r");
   if(!file) {
-    fprintf(stderr, "Can't open files %s" , filepath);
+    printf("Can't open files %s" , filepath);
     return NULL;
   }
     int arrlen = 0;
