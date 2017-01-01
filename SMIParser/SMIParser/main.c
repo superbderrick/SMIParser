@@ -7,44 +7,55 @@
 //
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 #include "ErrorType.h"
 #include "SMIParser.h"
-
+#include "SMIProcessor.h"
 int checkArgument(int num ,const char* fileName);
+void startParsing(const char * fileName);
 
 int main(int argc, const char * argv[]) {
   
-  if(checkArgument(argc, argv[1]) == 0) {
+  // check whether correct arguments.
+  if(checkArgument(argc, argv[1]) == ERROR_NONE) {
+    startParsing(argv[1]);
     
     char ** words = readFile(argv[1]);
     
     if(!words) {
-      fprintf(stderr, "Can'tbuild date strucure \n");
+      printf("Can't build Data Strucure \n");
+      exit(1);
     }
     
     for (int i = 0 ; words[i] != NULL ; i++) {
       printf("%s\n" ,words[i]);
     }
       printf(" Done \n" );
+  } else {
+    printf("Input arguments error program finish. \n");
+    exit(1);
   }
+  
     return 0;
 }
 
+
+
 int checkArgument(int num , const char * fileName) {
-  int errorNone = 0;
+  int errorNone = ERROR_NONE;
   
   if (num != ARGUMENT_NUM) {
-    errorNone = 1;
+    errorNone = ERROR_OCCUR;
     printf("Please input SMIPath correctly ! \n");
     exit(1);
   } else {
-    errorNone = 0;
-    printf("--------------------------------------------- \n");
-    printf("Start Parsing AT >>>>>>>>>>>> %s <<<<<<<<<<  \n" , fileName);
-    printf("--------------------------------------------- \n");
+    errorNone = ERROR_NONE;
   }
     return errorNone;
+}
+
+void startParsing(const char * fileName) {
+  printf("---------------------------------------------\n");
+  printf("Start Parsing AT >>>>>>>>> %s <<<<<<<<<\n" , fileName);
+  printf("---------------------------------------------\n");
 }

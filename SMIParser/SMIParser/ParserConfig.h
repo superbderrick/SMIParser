@@ -9,6 +9,6 @@
 #ifndef ParserConfig_h
 #define ParserConfig_h
 
-#define MAX_LENGTH 1048576 //Test Maxsimum size.
+#define STEPSIZE 100 //Test Maxsimum size.
 
 #endif /* ParserConfig_h */

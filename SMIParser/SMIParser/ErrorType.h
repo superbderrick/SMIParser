@@ -9,6 +9,9 @@
 #ifndef ErrorType_h
 #define ErrorType_h
 
-#define ARGUMENT_NUM 2 //Test Maxsimum size.
+#define ARGUMENT_NUM 2 //correct Argument number.
+
+#define ERROR_NONE 0 //No error.
+#define ERROR_OCCUR 1 //
 
 #endif /* ErrorType_h */
