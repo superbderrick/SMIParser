@@ -25,12 +25,10 @@ int main(int argc, const char * argv[]) {
     if(!words) {
       printf("Can't build Data Strucure \n");
       exit(1);
+    } else {
+      init(words);
     }
     
-    for (int i = 0 ; words[i] != NULL ; i++) {
-      printf("%s\n" ,words[i]);
-    }
-      printf(" Done \n" );
   } else {
     printf("Input arguments error program finish. \n");
     exit(1);

@@ -11,4 +11,6 @@
 
 #include <stdio.h>
 
+void init(char ** captionArray);
+
 #endif /* SMIProcessor_h */

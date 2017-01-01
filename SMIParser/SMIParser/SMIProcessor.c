@@ -7,3 +7,12 @@
 //
 
 #include "SMIProcessor.h"
+
+void init(char ** captionArray) {
+  printf(" Init success \n" );
+  for (int i = 0 ; captionArray[i] != NULL ; i++) {
+    printf("%s\n" ,captionArray[i]);
+  }
+  printf(" Done \n" );
+  
+}
