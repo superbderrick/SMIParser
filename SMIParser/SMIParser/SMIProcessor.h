@@ -10,7 +10,12 @@
 #define SMIProcessor_h
 
 #include <stdio.h>
+#include <string.h>
 
 void init(char ** captionArray);
+
+typedef struct passTags {
+  
+} passTags;
 
 #endif /* SMIProcessor_h */

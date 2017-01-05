@@ -15,7 +15,8 @@ char** readFile(const char * filepath) {
     printf("Can't open files %s" , filepath);
     return NULL;
   }
-    int arrlen = 0;
+  
+  int arrlen = 0;
   //Allocate space for arrlen char *
   char ** lines = NULL;
   char buf[1000];
@@ -26,7 +27,7 @@ char** readFile(const char * filepath) {
       
       char ** newlines = realloc(lines, arrlen * sizeof(char *));
       if(!newlines) {
-        fprintf(stderr, "can't realloc \n");
+        printf("can't realloc \n");
         exit(1);
       }
       lines = newlines;
@@ -43,6 +44,7 @@ char** readFile(const char * filepath) {
     i++;
   }
   lines[i] = NULL;
+  
   return lines;
   
 }
