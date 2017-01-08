@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void init(char ** captionArray);
+void initProcessor(char ** captionArray);
 
 typedef struct passTags {
   

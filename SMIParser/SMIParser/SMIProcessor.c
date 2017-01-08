@@ -10,7 +10,7 @@
 
 
 
-void init(char ** captionArray) {
+void initProcessor(char ** captionArray) {
   printf(" Init success \n" );
   
   //, "<STYLE", "<!--", "P {","-->" ,"<--" ,"</STYLE>"

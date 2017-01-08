@@ -29,7 +29,7 @@ int main(int argc, const char * argv[]) {
       printf("File read failuer it didin't make wordsList \n");
       exit(1);
     } else {
-      init(captionLines);
+      initProcessor(captionLines);
     }
     
   } else {
