@@ -12,16 +12,18 @@
 char** readFile(const char * filepath) {
   FILE *file = fopen(filepath, "r");
   if(!file) {
-    printf("Can't open files %s" , filepath);
+    printf("Can't open a file , file open error from : %s" , filepath);
     return NULL;
   }
   
-  int arrlen = 0;
   //Allocate space for arrlen char *
+  int arrlen = 0;
   char ** lines = NULL;
   char buf[1000];
   int i = 0;
+  
   while (fgets(buf, 1000, file)) {
+    
     if(i == arrlen) {
       arrlen += STEPSIZE;
       

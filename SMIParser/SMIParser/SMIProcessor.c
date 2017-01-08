@@ -12,28 +12,20 @@
 
 void initProcessor(char ** captionArray) {
   printf(" Init success \n" );
-  
-  //, "<STYLE", "<!--", "P {","-->" ,"<--" ,"</STYLE>"
-  const char* const passTagsArray[] = {"<SAMI>", "<HEAD>"};
+  char * test = "<SAMI>";
+  int num ,second ;
   for (int i = 0 ; captionArray[i] != NULL ; i++) {
-    
-    
-   // printf("%s\n" ,captionArray[i]);
-    
-    for (int k = 0; k< 2; k++) {
-      if(strcmp(captionArray[i], passTagsArray[k]) == 0) {
-        
-        printf("%s", captionArray[i]);
-        break;
-      } else {
-        //printf("start");
-      }
-      
+    if(i ==0) {
+     num = strcmp(test, captionArray[i]);
+     printf("num %d \n" , num);
+     
+      second = strcmp("<SAMI>", &captionArray[0][0]);
+      printf("num %d \n" , second);
     }
     
-//    if(strcmp(captionArray[i], passTagsArray)) {
-//      
-//    }
+    
+    
+    
   }
   printf(" Done \n" );
   
