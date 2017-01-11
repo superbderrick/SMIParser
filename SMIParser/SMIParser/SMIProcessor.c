@@ -14,8 +14,6 @@ void initProcessor(char ** captionArray) {
   char * test = "<SAMI>";
   
   for (int i = 0 ; captionArray[i] != NULL ; i++) {
-    
-    
     if(i ==0) {
       if(strcmp(captionArray[i], test) == 0) {
         printf("you did \n");

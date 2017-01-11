@@ -33,10 +33,14 @@ int main(int argc, const char * argv[]) {
       initProcessor(captionLines);
     }
     
+    free(captionLines);
+    
   } else {
     printf("Input arguments error program finish. \n");
     exit(1);
   }
+  
+  
   
     return 0;
 }
