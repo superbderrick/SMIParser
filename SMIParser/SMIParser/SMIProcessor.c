@@ -9,20 +9,18 @@
 #include "SMIProcessor.h"
 
 
-
 void initProcessor(char ** captionArray) {
   printf(" Init success \n" );
   char * test = "<SAMI>";
-  int num ,second ;
+  
   for (int i = 0 ; captionArray[i] != NULL ; i++) {
-    if(i ==0) {
-     num = strcmp(test, captionArray[i]);
-     printf("num %d \n" , num);
-     
-      second = strcmp("<SAMI>", &captionArray[0][0]);
-      printf("num %d \n" , second);
-    }
     
+    
+    if(i ==0) {
+      if(strcmp(captionArray[i], test) == 0) {
+        printf("you did \n");
+      }
+    }
     
     
     

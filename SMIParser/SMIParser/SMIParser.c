@@ -35,9 +35,12 @@ char** readFile(const char * filepath) {
       lines = newlines;
     }
     
-    // trim off new line char
-      buf[strlen(buf) -1] = '\0';
-    //Get length of buf
+    printf("whole line : %lu \n" , strlen(buf));
+    
+      buf[strlen(buf) -2] = '\0';
+    printf("whole line : %lu \n" , strlen(buf));
+    printf("whole line : %s \n" , buf);
+    
     int slen = strlen(buf);
     
     char *str = (char *)malloc((slen+1) * sizeof(char));
