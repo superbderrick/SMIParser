@@ -38,7 +38,7 @@ char** readFile(const char * filepath) {
     if(buf[strcspn(buf, CARRAGE_RETURN)] == strlen(buf)) {
        buf[strlen(buf) -1] = '\0';
     } else
-      buf[strcspn(buf, "\r\n")] = 0;
+      buf[strcspn(buf,CARRAGE_RETURN)] = 0;
     
     unsigned long slen = strlen(buf);
     
