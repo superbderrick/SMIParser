@@ -18,8 +18,6 @@ void startParsing(const char * fileName);
 int main(int argc, const char * argv[]) {
   
   // check whether correct arguments.
-  
-  
   if(checkArgument(argc, argv[1]) == ERROR_NONE) {
       startParsing(argv[1]);
     

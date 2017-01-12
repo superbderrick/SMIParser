@@ -19,11 +19,9 @@ char** readFile(const char * filepath) {
   //Allocate space for arrlen char *
   int arrlen = 0;
   char ** lines = NULL;
-  char buf[1000];
+  char buf[LINEBYBUFFERMAXIMUMSIZE];
   int i = 0;
-  
-  while (fgets(buf, 1000, file)) {
-    
+  while (fgets(buf, LINEBYBUFFERMAXIMUMSIZE, file)) {
     if(i == arrlen) {
       arrlen += STEPSIZE;
       
@@ -35,13 +33,14 @@ char** readFile(const char * filepath) {
       lines = newlines;
     }
     
-    printf("whole line : %lu \n" , strlen(buf));
+    //excaption work for Carrage Return Handle
     
-      buf[strlen(buf) -2] = '\0';
-    printf("whole line : %lu \n" , strlen(buf));
-    printf("whole line : %s \n" , buf);
+    if(buf[strcspn(buf, CARRAGE_RETURN)] == strlen(buf)) {
+       buf[strlen(buf) -1] = '\0';
+    } else
+      buf[strcspn(buf, "\r\n")] = 0;
     
-    int slen = strlen(buf);
+    unsigned long slen = strlen(buf);
     
     char *str = (char *)malloc((slen+1) * sizeof(char));
     strcpy(str, buf);

@@ -10,5 +10,8 @@
 #define ParserConfig_h
 
 #define STEPSIZE 100 //Basic Maxsimum size.
+#define LINEBYBUFFERMAXIMUMSIZE 1000 //Basic Maxsimum size.
+
+#define CARRAGE_RETURN  "\r\n"
 
 #endif /* ParserConfig_h */
