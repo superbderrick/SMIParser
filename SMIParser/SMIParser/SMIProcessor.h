@@ -12,10 +12,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include"ErrorType.h"
 
 
 void initProcessor(char ** captionArray);
-void showMetaTagInformations(char * strings);
+
 
 typedef struct passTags {
   
