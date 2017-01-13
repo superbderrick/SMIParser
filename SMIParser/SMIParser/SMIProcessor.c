@@ -11,14 +11,22 @@
 
 void initProcessor(char ** captionArray) {
   printf(" Init success \n" );
-  char * test = "<SAMI>";
-  
+  const char * passArray[5] = {"<SAMI>" ,"<HEAD>","<TITLE>","<STYLE","</HEAD>"};
+
   for (int i = 0 ; captionArray[i] != NULL ; i++) {
-    if(i ==0) {
-      if(strcmp(captionArray[i], test) == 0) {
-        printf("you did \n");
+    printf("realType %s \n" , captionArray[i]);
+    
+    for (int k = 0; k< 5; k++) {
+      if(strstr(captionArray[i], passArray[k]) != NULL) {
+        printf("passtypes %s \n" , captionArray[i]);
       }
     }
+    
+    //      if(strcmp(captionArray[i], passArray[k]) == 0) {
+    //        printf("you did %s \n" , captionArray[i]);
+    //
+    //      }
+
     
     
     
