@@ -36,7 +36,7 @@ char** readFile(const char * filepath) {
     //excaption work for Carrage Return Handle
     
     if(buf[strcspn(buf, CARRAGE_RETURN)] == strlen(buf)) {
-       buf[strlen(buf) -1] = '\0';
+       buf[strlen(buf) -1] = NULL_CHAR;
     } else
       buf[strcspn(buf,CARRAGE_RETURN)] = 0;
     

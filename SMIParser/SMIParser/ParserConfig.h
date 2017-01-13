@@ -13,5 +13,5 @@
 #define LINEBYBUFFERMAXIMUMSIZE 1000 //Basic Maxsimum size.
 
 #define CARRAGE_RETURN  "\r\n"
-
+#define NULL_CHAR       '\0'
 #endif /* ParserConfig_h */
