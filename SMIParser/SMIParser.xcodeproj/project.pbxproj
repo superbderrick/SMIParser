@@ -25,11 +25,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		491C06811E2B30E1003A62B9 /* CaptionDataStrucure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptionDataStrucure.h; sourceTree = "<group>"; };
 		496507881E11412B00A2E272 /* SMIParser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SMIParser; sourceTree = BUILT_PRODUCTS_DIR; };
 		4965078B1E11412B00A2E272 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		496507931E177A8100A2E272 /* ParserConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParserConfig.h; sourceTree = "<group>"; };
 		496507941E177C1800A2E272 /* ErrorType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorType.h; sourceTree = "<group>"; };
-		496507951E177CC000A2E272 /* SMITag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMITag.h; sourceTree = "<group>"; };
 		496507961E1780F400A2E272 /* SMIParser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SMIParser.c; sourceTree = "<group>"; };
 		496507971E1780F400A2E272 /* SMIParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMIParser.h; sourceTree = "<group>"; };
 		4988049D1E18DB5800E997AD /* SMIProcessor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SMIProcessor.c; sourceTree = "<group>"; };
@@ -77,11 +77,11 @@
 				4965078B1E11412B00A2E272 /* main.c */,
 				496507931E177A8100A2E272 /* ParserConfig.h */,
 				496507941E177C1800A2E272 /* ErrorType.h */,
-				496507951E177CC000A2E272 /* SMITag.h */,
 				496507961E1780F400A2E272 /* SMIParser.c */,
 				496507971E1780F400A2E272 /* SMIParser.h */,
 				4988049D1E18DB5800E997AD /* SMIProcessor.c */,
 				4988049E1E18DB5800E997AD /* SMIProcessor.h */,
+				491C06811E2B30E1003A62B9 /* CaptionDataStrucure.h */,
 			);
 			name = TestCode;
 			sourceTree = "<group>";

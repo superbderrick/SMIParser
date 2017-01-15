@@ -7,9 +7,11 @@
 //
 
 #include "SMIProcessor.h"
-
+#include "CaptionDataStrucure.h"
 int checkStartProcessingPoint(char * strings);
 void startProcessing(char * strings);
+
+int captionStatus = CAPTION_READY;
 
 void initProcessor(char ** captionArray) {
   int processingStatus = NOT_YET;
@@ -44,14 +46,55 @@ void initProcessor(char ** captionArray) {
 }
 
 void startProcessing(char * strings) {
-  printf(" Strings %s \n" ,strings );
+  const static char * startPart = "<SYNC Start=";
+ 
+  if(captionStatus == CAPTION_READY) {
+    if(strstr(strings, startPart) != NULL) {
+      captionStatus = CAPTION_MAKING;
+      // <SYNC Start=88048><P Class=KRCC>
+    
+      printf( "%s\n", strpbrk( strings, "Start"));
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+//      char str[] = "apple,banana,cat,dialogue";
+//      char *ptr;
+//      int tmp;
+//      
+//      printf("함수 호출 전의 스트링 : %s\n" , str) ;
+//      
+//      //ptr = strtok(str, ",");
+//      //printf("%s\n" , ptr);
+//      
+//      ptr = strtok(str, ",");
+//      
+//      while(ptr != NULL ){
+//        
+//        printf( "%s\n" , ptr);
+//        ptr = strtok(NULL, ",");
+//      }
+//      
+//      printf("함수 호출 후의 스트링 : %s\n" , str);
+    }
+  } else if(captionStatus == CAPTION_MAKING) {
+    
+  } else if (captionStatus == CAPTION_COMPLETE) {
+    
+  }
   
 }
 
 int checkStartProcessingPoint(char * strings ) {
-  const static char * startTag = "<BODY>";
+  const static char * bodyTag = "<BODY>";
   int hasBodyTag = ERROR_NONE;
-  if(strstr(strings, startTag) != NULL) {
+  if(strstr(strings, bodyTag) != NULL) {
     hasBodyTag = SEEK_BODY_TAG;
   } else
     hasBodyTag = NOTHING_BODY_TAG;
@@ -62,7 +105,6 @@ int checkStartProcessingPoint(char * strings ) {
 void showMetaTagInformations(char * strings) {
   const char * passArray[5] = {"<SAMI>" ,"<HEAD>","<TITLE>","<STYLE","</HEAD>"};
   
-  //first just pass unessa
   for (int k = 0; k< 5; k++) {
     if(strstr(strings, passArray[k]) != NULL) {
         printf("passtypes %s \n" , strings);

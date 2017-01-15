@@ -18,14 +18,7 @@
 void initProcessor(char ** captionArray);
 
 
-typedef struct captionInformation {
-  int startTime;
-  int endTime;
-  char * fontColor;
-  char * languageType;
-  char * captionText;
-  
-} captionInformation;
+
 
 
 
