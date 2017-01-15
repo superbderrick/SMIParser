@@ -16,9 +16,9 @@
 #define ERROR_NONE 0  // No error.
 #define ERROR_OCCUR 1 //
 
-#define SUCCESS 3  //
+#define SEEK_BODY_TAG 3  //
 #define NOT_YET 2  //
-#define FAILURE -1 //
+#define NOTHING_BODY_TAG -1 //
 
 
 //commmon types

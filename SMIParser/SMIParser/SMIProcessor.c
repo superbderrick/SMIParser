@@ -12,27 +12,26 @@ int checkStartProcessingPoint(char * strings);
 void startProcessing(char * strings);
 
 void initProcessor(char ** captionArray) {
-  int bStart = NOT_YET;
+  int processingStatus = NOT_YET;
   for (int i = 0 ; captionArray[i] != NULL ; i++) {
-    
-  //if you want to get met informations from SMI file please delete comments.
-  //showMetaTagInformations(captionArray[i]) ;
+    //if you want to get met informations from SMI file please delete comments.
+    //showMetaTagInformations(captionArray[i]) ;
    
-    if(bStart == NOT_YET) {
-      if(checkStartProcessingPoint(captionArray[i]) == ERROR_NONE) {
-        bStart = SUCCESS;
+    if(processingStatus == NOT_YET) {
+      if(checkStartProcessingPoint(captionArray[i]) == SEEK_BODY_TAG) {
+        processingStatus = SEEK_BODY_TAG;
       } else if (captionArray[i] == NULL) {
-        bStart = FAILURE;
+        processingStatus = NOTHING_BODY_TAG;
       }else {
-        bStart = NOT_YET;
+        processingStatus = NOT_YET;
       }
     }
     
-    if(bStart == NOT_YET) {
+    if(processingStatus == NOT_YET) {
       continue;
-    } else if(bStart == SUCCESS) {
+    } else if(processingStatus == SEEK_BODY_TAG) {
       startProcessing(captionArray[i]);
-    } else if(bStart == FAILURE) {
+    } else if(processingStatus == NOTHING_BODY_TAG) {
       printf("UnSupportType ,it can't looking for <BODY> Tag  \n");
       exit(1);
     }
@@ -40,7 +39,7 @@ void initProcessor(char ** captionArray) {
     
     
   }
-  printf(" Done \n" );
+  printf("ProcessingDone \n" );
   
 }
 
@@ -50,13 +49,13 @@ void startProcessing(char * strings) {
 
 int checkStartProcessingPoint(char * strings ) {
   const static char * startTag = "<BODY>";
-  int bFound = ERROR_NONE;
+  int hasBodyTag = ERROR_NONE;
   if(strstr(strings, startTag) != NULL) {
-    bFound = SUCCESS;
+    hasBodyTag = SEEK_BODY_TAG;
   } else
-    bFound = FAILURE;
+    hasBodyTag = NOTHING_BODY_TAG;
 
-    return bFound;
+    return hasBodyTag;
 }
 
 void showMetaTagInformations(char * strings) {
