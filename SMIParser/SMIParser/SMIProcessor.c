@@ -45,6 +45,7 @@ void initProcessor(char ** captionArray) {
 
 void startProcessing(char * strings) {
   printf(" Strings %s \n" ,strings );
+  
 }
 
 int checkStartProcessingPoint(char * strings ) {

@@ -18,8 +18,17 @@
 void initProcessor(char ** captionArray);
 
 
-typedef struct passTags {
+typedef struct captionInformation {
+  int startTime;
+  int endTime;
+  char * fontColor;
+  char * languageType;
+  char * captionText;
   
-} passTags;
+} captionInformation;
+
+
+
+
 
 #endif /* SMIProcessor_h */
