@@ -14,7 +14,7 @@ typedef struct captionInformation {
   int endTime;
   char * fontColor;
   char * languageType;
-  char ** captionText;
+  char * captionText;
   
 } captionInformation;
 

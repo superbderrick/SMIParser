@@ -9,7 +9,11 @@
 #include "SMIProcessor.h"
 #include "CaptionDataStrucure.h"
 int checkStartProcessingPoint(char * strings);
-void startProcessing(char * strings);
+void startProcessing(char * strings , captionInformation * info);
+
+captionInformation* getStartTime(char * strings , captionInformation * info);
+captionInformation* getText(char * strings);
+captionInformation* getEndTime(char * strings);
 
 int captionStatus = CAPTION_READY;
 
@@ -32,7 +36,8 @@ void initProcessor(char ** captionArray) {
     if(processingStatus == NOT_YET) {
       continue;
     } else if(processingStatus == SEEK_BODY_TAG) {
-      startProcessing(captionArray[i]);
+      captionInformation * info;
+      startProcessing(captionArray[i] , info);
     } else if(processingStatus == NOTHING_BODY_TAG) {
       printf("UnSupportType ,it can't looking for <BODY> Tag  \n");
       exit(1);
@@ -45,42 +50,68 @@ void initProcessor(char ** captionArray) {
   
 }
 
-void startProcessing(char * strings) {
+captionInformation* getStartTime(char * strings ,captionInformation * info) {
+  char *ptr;
+  int i = 0;
+  while(ptr != NULL ){
+    if(i == 0) {
+      ptr = strtok(strings, "=");
+      printf( "%s\n" , ptr);
+      ptr = strtok(NULL, ">");
+      info->startTime = atoi(ptr);
+      printf( "%s\n" , ptr);
+    } else if(i == 1) {
+      ptr = strtok(NULL, "=");
+      printf( "%s\n" , ptr);
+      ptr = strtok(NULL, ">");
+      printf( "%s\n" , ptr);
+      info->languageType = ptr;
+      ptr = NULL;
+      break;
+    }
+    i++;
+  }
+  
+  return info;
+}
+captionInformation* getText(char * strings) {
+  return NULL;
+}
+captionInformation* getEndTime(char * strings) {
+  return NULL ;
+}
+
+void startProcessing(char * strings ,captionInformation * info) {
   const static char * startPart = "<SYNC Start=";
- 
+  
   if(captionStatus == CAPTION_READY) {
     if(strstr(strings, startPart) != NULL) {
       captionStatus = CAPTION_MAKING;
       
-      char *ptr;
-      int i = 0;
-      captionInformation info;
       
-      //first line
-      while(ptr != NULL ){
-        if(i == 0) {
-          ptr = strtok(strings, "=");
-          printf( "%s\n" , ptr);
-          ptr = strtok(NULL, ">");
-          info.startTime = atoi(ptr);
-          printf( "%s\n" , ptr);
-        } else if(i == 1) {
-          ptr = strtok(NULL, "=");
-          printf( "%s\n" , ptr);
-          ptr = strtok(NULL, ">");
-          printf( "%s\n" , ptr);
-          info.fontColor = ptr;
-          break;
-        }
-        i++;
-      }
-      
-      //second line
-    
-      
+      info = getStartTime(strings , info);
       
     }
   } else if(captionStatus == CAPTION_MAKING) {
+    char *pptr;
+    int k = 0;
+    
+//    while(pptr != NULL ){
+//      if(k == 0) {
+//        pptr = strtok(strings, "=");
+//        printf( "%s\n" , pptr);
+//        pptr = strtok(NULL, ">");
+//        info.fontColor = pptr;
+//        printf( "%s\n" , pptr);
+//      } else if(k == 1) {
+//        pptr = strtok(NULL, "<");
+//        printf( "%s\n" , pptr);
+//        info.captionText = pptr;
+//        break;
+//      }
+//      
+//      k++;
+//    }
     
   } else if (captionStatus == CAPTION_COMPLETE) {
     
