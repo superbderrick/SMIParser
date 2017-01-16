@@ -51,37 +51,34 @@ void startProcessing(char * strings) {
   if(captionStatus == CAPTION_READY) {
     if(strstr(strings, startPart) != NULL) {
       captionStatus = CAPTION_MAKING;
-      // <SYNC Start=88048><P Class=KRCC>
+      
+      char *ptr;
+      int i = 0;
+      captionInformation info;
+      
+      //first line
+      while(ptr != NULL ){
+        if(i == 0) {
+          ptr = strtok(strings, "=");
+          printf( "%s\n" , ptr);
+          ptr = strtok(NULL, ">");
+          info.startTime = atoi(ptr);
+          printf( "%s\n" , ptr);
+        } else if(i == 1) {
+          ptr = strtok(NULL, "=");
+          printf( "%s\n" , ptr);
+          ptr = strtok(NULL, ">");
+          printf( "%s\n" , ptr);
+          info.fontColor = ptr;
+          break;
+        }
+        i++;
+      }
+      
+      //second line
     
-      printf( "%s\n", strpbrk( strings, "Start"));
       
       
-      
-      
-      
-      
-      
-      
-      
-      
-//      char str[] = "apple,banana,cat,dialogue";
-//      char *ptr;
-//      int tmp;
-//      
-//      printf("함수 호출 전의 스트링 : %s\n" , str) ;
-//      
-//      //ptr = strtok(str, ",");
-//      //printf("%s\n" , ptr);
-//      
-//      ptr = strtok(str, ",");
-//      
-//      while(ptr != NULL ){
-//        
-//        printf( "%s\n" , ptr);
-//        ptr = strtok(NULL, ",");
-//      }
-//      
-//      printf("함수 호출 후의 스트링 : %s\n" , str);
     }
   } else if(captionStatus == CAPTION_MAKING) {
     
