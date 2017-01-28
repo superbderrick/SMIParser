@@ -7,7 +7,11 @@
 //
 
 #include "SMIProcessor.h"
+#include "captionLinkedList.h"
 #include "CaptionDataStrucure.h"
+
+//
+void analzecaptiondata(int i, char **captionArray);
 
 int checkStartProcessingPoint(char * strings);
 void startProcessing(char * strings , captionInformation * info);
@@ -16,40 +20,38 @@ captionInformation* getStartTime(char * strings , captionInformation * info);
 
 int captionStatus = CAPTION_READY;
 
-void checkEntryPoint(int *processingStatus_p, int i, char **captionArray) {
-    //showMetaTagInformations(captionArray[i]) ;
-   
+void checkBodyTag(int *processingStatus_p, int i, char **captionArray) {
       if(*processingStatus_p == NOT_YET) {
-      if(checkStartProcessingPoint(captionArray[i]) == SEEK_BODY_TAG) {
-        *processingStatus_p = SEEK_BODY_TAG;
-      } else if (captionArray[i] == NULL) {
-        *processingStatus_p = NOTHING_BODY_TAG;
-      }else {
+        if(checkStartProcessingPoint(captionArray[i]) == SEEK_BODY_TAG) {
+          *processingStatus_p = SEEK_BODY_TAG;
+        } else if (captionArray[i] == NULL) {
+          *processingStatus_p = NOTHING_BODY_TAG;
+        } else {
         *processingStatus_p = NOT_YET;
       }
     }
 }
 
-void analzecaptiondata(int processingStatus, int i, char **captionArray) {
-  if(processingStatus == NOT_YET) {
-      return;
-    } else if(processingStatus == SEEK_BODY_TAG) {
-      captionInformation * info;
-      startProcessing(captionArray[i] , info);
-    } else if(processingStatus == NOTHING_BODY_TAG) {
-      printf("UnSupportType ,it can't looking for <BODY> Tag  \n");
-      exit(1);
-    }
+void analzecaptiondata(int i, char **captionArray) {
+    captionInformation * info;
+    startProcessing(captionArray[i] , info);
 }
 
 void initProcessor(char ** captionArray) {
   int processingStatus = NOT_YET;
+  captionInfoList * captionList = (captionInfoList *)malloc(sizeof(captionInfoList));
+  initCaptionInformationList(captionList);
+  
   for (int i = 0 ; captionArray[i] != NULL ; i++) {
-    checkEntryPoint(&processingStatus, i, captionArray);
+    //showMetaTagInformations(captionArray[i]) ;
     
-    analzecaptiondata(processingStatus, i, captionArray);
+    checkBodyTag(&processingStatus, i, captionArray);
+    
+    if(processingStatus == SEEK_BODY_TAG)
+      analzecaptiondata( i, captionArray);
     
   }
+  
   printf("ProcessingDone \n" );
   
 }
