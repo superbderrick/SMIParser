@@ -10,10 +10,10 @@
 #define SMIProcessorPrivate_h
 
 #include "captionLinkedList.h"
-#include "CaptionDataStrucure.h"
+
 
 void startProcessing(int i, char **captionArray , captionInfoList * captionList);
 int checkStartProcessingPoint(char * strings);
-void derrickProcessing(char * strings , captionInformation * info);
+void derrickProcessing(char * strings , captionInfoList * captionList , int index);
 
 #endif /* SMIProcessorPrivate_h */

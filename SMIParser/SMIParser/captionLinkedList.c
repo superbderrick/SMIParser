@@ -36,13 +36,14 @@ void print_captionInformation(captionInfoList* captionList){
   }
   
 }
-void insertCaptionInformation(captionInfoList* captionList,int startTime,int index){
+void insertCaptionInformation(captionInfoList* captionList,int startTime,char * captionType,int index){
   if(index<1 || index>(captionList->count)+1){
     printf("Position Out of Bound and overlabed problem \n");
     return;
   }
   captionInfo *  new_captionInfo =(captionInfo*)malloc(sizeof(captionInfo));
   new_captionInfo->startTime=startTime;
+  new_captionInfo->languageType = captionType;
   
   if(index==1){
     new_captionInfo->next=captionList->head;
@@ -84,7 +85,7 @@ void deleteCaptionInformation(captionInfoList* captionList,int position){
   captionList->count--;
 }
 
-void searchCaptionInformation(captionInfoList* captionList,int startTime){
+int searchCaptionInformation(captionInfoList* captionList,int startTime){
   captionInfo*  tmp=captionList->head;
   int i=1;
   while(tmp!=NULL){
@@ -94,12 +95,14 @@ void searchCaptionInformation(captionInfoList* captionList,int startTime){
   }
   if(i>captionList->count){
     printf("The value %d is NOT exists\n",startTime);
+    return 0;
   }
   else{
     printf("The value %d is at position %d in the list\n",startTime,i);
+    return i;
   }
 }
-void updateCaptionInfo(captionInfoList* captionList,int startTime,int position){
+void insertCaptionText(captionInfoList* captionList,char * captionText,int position){
   if(position<1 || position>(captionList->count)){
     printf("Position Out of Bound\n");
     return;
@@ -110,5 +113,5 @@ void updateCaptionInfo(captionInfoList* captionList,int startTime,int position){
   for(i=1;i<position;i++){
     tmp=tmp->next;
   }
-  tmp->startTime=startTime;
+  tmp->captionText=captionText;
 }

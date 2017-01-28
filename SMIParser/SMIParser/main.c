@@ -11,7 +11,7 @@
 #include "ErrorType.h"
 #include "SMIParser.h"
 #include "SMIProcessor.h"
-#include "CaptionDataStrucure.h"
+
 
 int checkArgument(int num ,const char* fileName);
 void startParsing(const char * fileName);

@@ -26,12 +26,12 @@ typedef struct captionInfoList {
 } captionInfoList;
 
 void initCaptionInformationList(captionInfoList* captionList);
-void insertCaptionInformation(captionInfoList* captionList,int startTime,int index);
+void insertCaptionInformation(captionInfoList* captionList,int startTime,char * captionType,int index);
 void deleteCaptionInformation(captionInfoList* captionList,int position);
 void print_captionInformation(captionInfoList* captionList);
-void updateCaptionInfo(captionInfoList* captionList,int startTime,int position);
+void insertCaptionText(captionInfoList* captionList,char * captionText,int position);
 void deInitCaptionInformationList(captionInfoList* captionList);
-void searchCaptionInformation(captionInfoList* captionList,int startTime);
+int searchCaptionInformation(captionInfoList* captionList,int startTime);
 
 
 #endif /* captionLinkedList_h */
