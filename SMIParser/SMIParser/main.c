@@ -34,6 +34,7 @@ int main(int argc, const char * argv[]) {
     }
     
     free(captionLines);
+    captionLines = NULL;
     
   } else {
     printf("Input arguments error program finish. \n");

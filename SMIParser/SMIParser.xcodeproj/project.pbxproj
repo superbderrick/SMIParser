@@ -10,6 +10,7 @@
 		4965078C1E11412B00A2E272 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4965078B1E11412B00A2E272 /* main.c */; };
 		496507981E1780F400A2E272 /* SMIParser.c in Sources */ = {isa = PBXBuildFile; fileRef = 496507961E1780F400A2E272 /* SMIParser.c */; };
 		4988049F1E18DB5800E997AD /* SMIProcessor.c in Sources */ = {isa = PBXBuildFile; fileRef = 4988049D1E18DB5800E997AD /* SMIProcessor.c */; };
+		499CE2741E3C83F1009B62F8 /* captionLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 499CE2721E3C83F1009B62F8 /* captionLinkedList.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		496507971E1780F400A2E272 /* SMIParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMIParser.h; sourceTree = "<group>"; };
 		4988049D1E18DB5800E997AD /* SMIProcessor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SMIProcessor.c; sourceTree = "<group>"; };
 		4988049E1E18DB5800E997AD /* SMIProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMIProcessor.h; sourceTree = "<group>"; };
+		499CE2721E3C83F1009B62F8 /* captionLinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = captionLinkedList.c; sourceTree = "<group>"; };
+		499CE2731E3C83F1009B62F8 /* captionLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = captionLinkedList.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				4988049D1E18DB5800E997AD /* SMIProcessor.c */,
 				4988049E1E18DB5800E997AD /* SMIProcessor.h */,
 				491C06811E2B30E1003A62B9 /* CaptionDataStrucure.h */,
+				499CE2721E3C83F1009B62F8 /* captionLinkedList.c */,
+				499CE2731E3C83F1009B62F8 /* captionLinkedList.h */,
 			);
 			name = TestCode;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				496507981E1780F400A2E272 /* SMIParser.c in Sources */,
+				499CE2741E3C83F1009B62F8 /* captionLinkedList.c in Sources */,
 				4965078C1E11412B00A2E272 /* main.c in Sources */,
 				4988049F1E18DB5800E997AD /* SMIProcessor.c in Sources */,
 			);
