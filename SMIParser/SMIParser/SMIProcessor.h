@@ -12,7 +12,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
 #include"ErrorType.h"
+#include "SMIProcessorPrivate.h"
 
 
 void initProcessor(char ** captionArray);

@@ -37,6 +37,7 @@
 		4988049E1E18DB5800E997AD /* SMIProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMIProcessor.h; sourceTree = "<group>"; };
 		499CE2721E3C83F1009B62F8 /* captionLinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = captionLinkedList.c; sourceTree = "<group>"; };
 		499CE2731E3C83F1009B62F8 /* captionLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = captionLinkedList.h; sourceTree = "<group>"; };
+		499CE2751E3C963E009B62F8 /* SMIProcessorPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMIProcessorPrivate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +88,7 @@
 				491C06811E2B30E1003A62B9 /* CaptionDataStrucure.h */,
 				499CE2721E3C83F1009B62F8 /* captionLinkedList.c */,
 				499CE2731E3C83F1009B62F8 /* captionLinkedList.h */,
+				499CE2751E3C963E009B62F8 /* SMIProcessorPrivate.h */,
 			);
 			name = TestCode;
 			sourceTree = "<group>";

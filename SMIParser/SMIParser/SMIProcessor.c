@@ -7,14 +7,11 @@
 //
 
 #include "SMIProcessor.h"
-#include "captionLinkedList.h"
-#include "CaptionDataStrucure.h"
 
-//
-void analzecaptiondata(int i, char **captionArray);
 
-int checkStartProcessingPoint(char * strings);
-void startProcessing(char * strings , captionInformation * info);
+
+
+
 
 captionInformation* getStartTime(char * strings , captionInformation * info);
 
@@ -32,34 +29,29 @@ void checkBodyTag(int *processingStatus_p, int i, char **captionArray) {
     }
 }
 
-void analzecaptiondata(int i, char **captionArray) {
+void startProcessing(int i, char **captionArray , captionInfoList * captionList) {
     captionInformation * info;
-    startProcessing(captionArray[i] , info);
+    derrickProcessing(captionArray[i] , info);
 }
 
 void initProcessor(char ** captionArray) {
   int processingStatus = NOT_YET;
-  captionInfoList * captionList = (captionInfoList *)malloc(sizeof(captionInfoList));
-  initCaptionInformationList(captionList);
+  captionInfoList * captioninfoList = (captionInfoList *)malloc(sizeof(captionInfoList));
+  initCaptionInformationList(captioninfoList);
   
   for (int i = 0 ; captionArray[i] != NULL ; i++) {
-    //showMetaTagInformations(captionArray[i]) ;
-    
     checkBodyTag(&processingStatus, i, captionArray);
     
     if(processingStatus == SEEK_BODY_TAG)
-      analzecaptiondata( i, captionArray);
-    
+        startProcessing( i, captionArray , captioninfoList);
   }
-  
-  printf("ProcessingDone \n" );
-  
+    printf("ProcessingDone \n" );
 }
 
 captionInformation* getStartTime(char * strings ,captionInformation * info) {
   char *ptr;
   int i = 0;
-  while(ptr != NULL ){
+  while(strings != NULL ){
     if(i == 0) {
       ptr = strtok(strings, "=");
       printf( "%s\n" , ptr);
@@ -82,43 +74,43 @@ captionInformation* getStartTime(char * strings ,captionInformation * info) {
 }
 
 
-void startProcessing(char * strings ,captionInformation * info) {
+void derrickProcessing(char * strings ,captionInformation * info) {
   printf("test line by line %s \n" , strings );
   const static char * startPart = "<SYNC Start=";
   
-//  if(captionStatus == CAPTION_READY) {
-//    if(strstr(strings, startPart) != NULL) {
-//      captionStatus = CAPTION_MAKING;
-//      
-//      
-//      info = getStartTime(strings , info);
-//      
-//    }
-//  } else if(captionStatus == CAPTION_MAKING) {
+  if(captionStatus == CAPTION_READY) {
+    if(strstr(strings, startPart) != NULL) {
+      captionStatus = CAPTION_MAKING;
+      
+      
+      //info = getStartTime(strings , info);
+      
+    }
+  } else if(captionStatus == CAPTION_MAKING) {
 //    char *pptr;
 //    int k = 0;
 //    
-////    while(pptr != NULL ){
-////      if(k == 0) {
-////        pptr = strtok(strings, "=");
-////        printf( "%s\n" , pptr);
-////        pptr = strtok(NULL, ">");
-////        info.fontColor = pptr;
-////        printf( "%s\n" , pptr);
-////      } else if(k == 1) {
-////        pptr = strtok(NULL, "<");
-////        printf( "%s\n" , pptr);
-////        info.captionText = pptr;
-////        break;
-////      }
-////      
-////      k++;
-////    }
-//    
-//  } else if (captionStatus == CAPTION_COMPLETE) {
-//    
-//  }
-//  
+//    while(pptr != NULL ){
+//      if(k == 0) {
+//        pptr = strtok(strings, "=");
+//        printf( "%s\n" , pptr);
+//        pptr = strtok(NULL, ">");
+//        
+//        printf( "%s\n" , pptr);
+//      } else if(k == 1) {
+//        pptr = strtok(NULL, "<");
+//        printf( "%s\n" , pptr);
+//        
+//        break;
+//      }
+//      
+//      k++;
+//    }
+    
+  } else if (captionStatus == CAPTION_COMPLETE) {
+    
+  }
+  
 }
 
 int checkStartProcessingPoint(char * strings ) {
